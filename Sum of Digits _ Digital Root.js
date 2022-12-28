@@ -4,11 +4,9 @@ function digitalRoot(n) {
     for(i=0; i<digits.length; i++){
       sum += parseInt(digits[i]) ;
     }
-    if (String(sum).length>1){
-          digitalRoot(sum);
+    if (sum < 10){    
+        return sum;
       } else {
-          return sum;
+        return digitalRoot(sum);
       }
-      return digitalRoot(sum)
   }
-  
