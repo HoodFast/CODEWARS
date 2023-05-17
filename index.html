@@ -6,31 +6,40 @@
 </head>
 <body>
 <script>
-    function findOutlier(int) {
-        let temp = [0, 0]
-        for (let i = 0; i < 3; i++) {
-
-            if (int[i] % 2 === 0) {
-                temp[0] += 1
-            } else {
-                temp[1] += 1
-            }
+    function alphabetPosition(text) {
+        let alphabet = {
+            A: 1,
+            B: 2,
+            C: 3,
+            D: 4,
+            E: 5,
+            F: 6,
+            G: 7,
+            H: 8,
+            I: 9,
+            J: 10,
+            K: 11,
+            L: 12,
+            M: 13,
+            N: 14,
+            O: 15,
+            P: 16,
+            Q: 17,
+            R: 18,
+            S: 19,
+            T: 20,
+            U: 21,
+            V: 22,
+            W: 23,
+            X: 24,
+            Y: 25,
+            Z: 26
         }
-
-        if (temp[0] <= 1) {
-            return int.filter(i => i % 2 === 0)[0]
-        } else if (temp[1] <= 1) {
-            let a=int.filter(i => i % 2 === 1 )[0]
-            if( a ){
-                return a
-            }else{
-                return int.filter(i => i % 2 === -1 )[0]
-            }
-        }
+        return text.toUpperCase().split('').map(i=> alphabet[i]?`${alphabet[i]} `:'').join('').trim();
     }
 
 
-    let a = findOutlier([38124630, -196883774, -140118564, -34593854, -5262080, -52771174, -54807736, -6527450, 190123792, 24850800, 170053798, 29918668, -92107000, 18150108, -56077548, 4877202, -155935776, -166379332, -191716002, -14835816, -182318570, -171362237, 28001716, -103326190, -6951768, -135683278, -31104028, 78814410, 180622634, 92642260])
+    let a = alphabetPosition('str.ing')
     console.log(a)
 </script>
 
