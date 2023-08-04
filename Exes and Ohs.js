@@ -1,5 +1,5 @@
 function XO(str) {
-    if(!str.length){return false}
+    if(!str.length){return true}
 
     let temp = str.toUpperCase().split('')
     console.log(temp)
